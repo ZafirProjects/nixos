@@ -40,6 +40,7 @@
     obs-studio
     handbrake
     vlc
+    pinta
 
     # Proton
     protonmail-desktop
