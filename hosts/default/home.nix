@@ -3,9 +3,11 @@
 {
   imports = [
     inputs.nvf.homeManagerModules.default
+    inputs.mango.hmModules.mango
     ../../modules/home-manager/packages.nix
     ../../modules/home-manager/nvf.nix
     ../../modules/home-manager/ghostty.nix
+    ../../modules/home-manager/mango.nix
   ];
 
   home.username = "zafir";

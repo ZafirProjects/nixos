@@ -13,12 +13,6 @@
   # Kernel
   boot.kernelPackages = pkgs.linuxPackages_6_12;
 
-  # Hostname
-  networking.hostName = "default";
-
-  #Shell
-  programs.zsh.enable = true;
-
   # User account
   users.users.zafir = {
     isNormalUser = true;

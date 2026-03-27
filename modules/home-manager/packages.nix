@@ -17,16 +17,10 @@
     vesktop
     element-desktop
 
-    # System tools
-    wget
-    git
-
     # Desktop / Wayland utilities
     waybar
-    hyprpaper
-
-    # KDE applications
-    kdePackages.kate
+    swaybg
+    rofi
 
     # Games
     prismlauncher
