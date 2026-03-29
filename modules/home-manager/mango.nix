@@ -276,8 +276,6 @@
     '';
     autostart_sh = ''
       swaybg -i ~/wallpapers/10.png > /dev/null 2>&1 &
-      zeditor ~/nixos &
-      ghostty &
     '';
   };
 }
