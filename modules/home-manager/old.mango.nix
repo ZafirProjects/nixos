@@ -9,12 +9,9 @@
       monitorrule=name:^DP-1$,width:1920,height:1080,refresh:144,x:1920,y:0,scale:1,vrr:0,rr:0
       monitorrule=name:^HDMI-A-1$,width:1920,height:1080,refresh:75,x:0,y:0,scale:1,vrr:0,rr:0
 
-      # --- App Launchers ---
-      # WM launches apps, so SUPER is the right modifier here
-      bind=SUPER,space,spawn,rofi -show drun
       bind=SUPER,Return,spawn,ghostty
       bind=SUPER,z,spawn,zeditor
-      bind=SUPER,b,spawn,firefox
+      bind=SUPER,f,spawn,firefox
       bind=SUPER,d,spawn,dolphin
       bind=SUPER,v,spawn,vesktop
       bind=SUPER,s,spawn,steam
@@ -164,97 +161,102 @@
       # key name refer to `xev` or `wev` command output,
       # mod keys name: super,ctrl,alt,shift,none
 
-      # --- WM Control ---
+      # reload config
       bind=SUPER,r,reload_config
+
+      # menu and terminal
+      bind=Alt,space,spawn,rofi -show drun
+      bind=Alt,Return,spawn,foot
+
+      # exit
       bind=SUPER,m,quit
       bind=SUPER,q,killclient
 
-      # --- Window Focus ---
-      # Tab cycles stack; arrows move focus directionally
+      # switch window focus
       bind=SUPER,Tab,focusstack,next
-      bind=SUPER,h,focusdir,left
-      bind=SUPER,l,focusdir,right
-      bind=SUPER,k,focusdir,up
-      bind=SUPER,j,focusdir,down
+      bind=ALT,Left,focusdir,left
+      bind=ALT,Right,focusdir,right
+      bind=ALT,Up,focusdir,up
+      bind=ALT,Down,focusdir,down
 
-      # --- Swap Windows ---
-      bind=SUPER+ALT,k,exchange_client,up
-      bind=SUPER+ALT,j,exchange_client,down
-      bind=SUPER+ALT,h,exchange_client,left
-      bind=SUPER+ALT,l,exchange_client,right
+      # swap window
+      bind=SUPER+Alt,Up,exchange_client,up
+      bind=SUPER+Alt,Down,exchange_client,down
+      bind=SUPER+Alt,Left,exchange_client,left
+      bind=SUPER+Alt,Right,exchange_client,right
 
-      # --- Window State ---
+      # switch window status
       bind=SUPER,g,toggleglobal,
-      bind=SUPER,w,toggleoverview,
-      bind=SUPER,t,togglefloating,
-      bind=SUPER,a,togglemaximizescreen,
-      bind=SUPER,f,togglefullscreen,
-      bind=SUPER+SHIFT,f,togglefakefullscreen,
+      bind=ALT,Tab,toggleoverview,
+      bind=ALT,backslash,togglefloating,
+      bind=ALT,a,togglemaximizescreen,
+      bind=ALT,f,togglefullscreen,
+      bind=ALT+SHIFT,f,togglefakefullscreen,
       bind=SUPER,i,minimized,
-      bind=SUPER+SHIFT,i,restore_minimized
       bind=SUPER,o,toggleoverlay,
-      bind=SUPER,grave,toggle_scratchpad
+      bind=SUPER+SHIFT,I,restore_minimized
+      bind=ALT,z,toggle_scratchpad
 
-      # --- Layout ---
-      # tile,scroller,grid,deck,monocle,center_tile,vertical_tile,vertical_scroller
-      bind=SUPER,p,set_proportion,1.0
-      bind=SUPER,bracketright,switch_proportion_preset,
+      # scroller layout
+      bind=ALT,e,set_proportion,1.0
+      bind=ALT,x,switch_proportion_preset,
+
+      # switch layout
       bind=SUPER,n,switch_layout
 
-      # --- Tag (Workspace) Navigation ---
-      # Navigate left/right through tags
+      # tag switch
       bind=SUPER,Left,viewtoleft,0
+      bind=CTRL,Left,viewtoleft_have_client,0
       bind=SUPER,Right,viewtoright,0
-      # Move focused client to adjacent tag
-      bind=SUPER+CTRL+ALT,Left,tagtoleft,0
-      bind=SUPER+CTRL+ALT,Right,tagtoright,0
+      bind=CTRL,Right,viewtoright_have_client,0
+      bind=CTRL+SUPER,Left,tagtoleft,0
+      bind=CTRL+SUPER,Right,tagtoright,0
 
-      # Switch to tag by number
-      bind=SUPER,1,view,1,0
-      bind=SUPER,2,view,2,0
-      bind=SUPER,3,view,3,0
-      bind=SUPER,4,view,4,0
-      bind=SUPER,5,view,5,0
-      bind=SUPER,6,view,6,0
-      bind=SUPER,7,view,7,0
-      bind=SUPER,8,view,8,0
-      bind=SUPER,9,view,9,0
+      bind=Ctrl,1,view,1,0
+      bind=Ctrl,2,view,2,0
+      bind=Ctrl,3,view,3,0
+      bind=Ctrl,4,view,4,0
+      bind=Ctrl,5,view,5,0
+      bind=Ctrl,6,view,6,0
+      bind=Ctrl,7,view,7,0
+      bind=Ctrl,8,view,8,0
+      bind=Ctrl,9,view,9,0
 
-      # Move focused client to tag by number
       # tag: move client to the tag and focus it
       # tagsilent: move client to the tag and not focus it
-      bind=SUPER+Shift,1,tag,1,0
-      bind=SUPER+Shift,2,tag,2,0
-      bind=SUPER+Shift,3,tag,3,0
-      bind=SUPER+Shift,4,tag,4,0
-      bind=SUPER+Shift,5,tag,5,0
-      bind=SUPER+Shift,6,tag,6,0
-      bind=SUPER+Shift,7,tag,7,0
-      bind=SUPER+Shift,8,tag,8,0
-      bind=SUPER+Shift,9,tag,9,0
+      # bind=Alt,1,tagsilent,1
+      bind=Alt,1,tag,1,0
+      bind=Alt,2,tag,2,0
+      bind=Alt,3,tag,3,0
+      bind=Alt,4,tag,4,0
+      bind=Alt,5,tag,5,0
+      bind=Alt,6,tag,6,0
+      bind=Alt,7,tag,7,0
+      bind=Alt,8,tag,8,0
+      bind=Alt,9,tag,9,0
 
-      # --- Monitor Focus & Client Migration ---
-      bind=SUPER+CTRL,Left,focusmon,left
-      bind=SUPER+CTRL,Right,focusmon,right
+      # monitor switch
+      bind=alt+shift,Left,focusmon,left
+      bind=alt+shift,Right,focusmon,right
       bind=SUPER+Shift,Left,tagmon,left
       bind=SUPER+Shift,Right,tagmon,right
 
-      # --- Gaps ---
-      bind=SUPER+Shift,equal,incgaps,1
-      bind=SUPER+Shift,minus,incgaps,-1
-      bind=SUPER+Shift,g,togglegaps
+      # gaps
+      bind=ALT+SHIFT,X,incgaps,1
+      bind=ALT+SHIFT,Z,incgaps,-1
+      bind=ALT+SHIFT,R,togglegaps
 
-      # --- Move Floating Windows ---
-      bind=SUPER+CTRL+Shift,Up,movewin,+0,-50
-      bind=SUPER+CTRL+Shift,Down,movewin,+0,+50
-      bind=SUPER+CTRL+Shift,Left,movewin,-50,+0
-      bind=SUPER+CTRL+Shift,Right,movewin,+50,+0
+      # movewin
+      bind=CTRL+SHIFT,Up,movewin,+0,-50
+      bind=CTRL+SHIFT,Down,movewin,+0,+50
+      bind=CTRL+SHIFT,Left,movewin,-50,+0
+      bind=CTRL+SHIFT,Right,movewin,+50,+0
 
-      # --- Resize Windows ---
-      bind=SUPER+CTRL,k,resizewin,+0,-50
-      bind=SUPER+CTRL,j,resizewin,+0,+50
-      bind=SUPER+CTRL,h,resizewin,-50,+0
-      bind=SUPER+CTRL,l,resizewin,+50,+0
+      # resizewin
+      bind=CTRL+ALT,Up,resizewin,+0,-50
+      bind=CTRL+ALT,Down,resizewin,+0,+50
+      bind=CTRL+ALT,Left,resizewin,-50,+0
+      bind=CTRL+ALT,Right,resizewin,+50,+0
 
       # Mouse Button Bindings
       # btn_left and btn_right can't bind none mod key
