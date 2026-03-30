@@ -34,7 +34,6 @@
           right = [
             {
               id = "Tray";
-              # wtf is the varname for this? enableDrawer = false;
             }
             {
               id = "Bluetooth";
