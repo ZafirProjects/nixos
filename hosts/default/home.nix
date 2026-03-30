@@ -8,6 +8,7 @@
     ../../modules/home-manager/nvf.nix
     ../../modules/home-manager/ghostty.nix
     ../../modules/home-manager/mango.nix
+    ../../modules/home-manager/noctalia.nix
   ];
 
   home.username = "zafir";

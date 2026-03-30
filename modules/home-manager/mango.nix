@@ -273,6 +273,7 @@
       layerrule=animation_type_close:zoom,layer_name:rofi
 
       exec-once=~/.config/mango/autostart.sh
+      exec-once=noctalia-shell
     '';
     autostart_sh = ''
       swaybg -i ~/wallpapers/10.png > /dev/null 2>&1 &

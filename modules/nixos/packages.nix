@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   # Browser
@@ -17,5 +17,6 @@
     xdg-desktop-portal-wlr
     fzf
     zoxide
+    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }
