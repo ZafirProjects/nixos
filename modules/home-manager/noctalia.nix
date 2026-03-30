@@ -24,7 +24,7 @@
           ];
           center = [
             {
-              formatHorizontal = "HH:mm";
+              formatHorizontal = "ddd MMM d - HH:mm t";
               formatVertical = "HH mm";
               id = "Clock";
               useMonospacedFont = true;
@@ -32,6 +32,10 @@
             }
           ];
           right = [
+            {
+              id = "Tray";
+              # wtf is the varname for this? enableDrawer = false;
+            }
             {
               id = "Bluetooth";
             }
@@ -47,12 +51,12 @@
       };
       colorSchemes.predefinedScheme = "Nord";
       general = {
-        avatarImage = "/home/drfoobar/.face";
+        avatarImage = "";
         radiusRatio = 0.2;
       };
       location = {
         monthBeforeDay = true;
-        name = "Marseille, France";
+        name = "London, England";
       };
       wallpaper = {
         directory = "~/wallpapers";
