@@ -11,7 +11,7 @@
 
       # --- App Launchers ---
       # WM launches apps, so SUPER is the right modifier here
-      bind=SUPER,space,spawn,rofi -show drun
+      bind=SUPER,space,spawn,noctalia-shell ipc call launcher toggle
       bind=SUPER,Return,spawn,ghostty
       bind=SUPER,z,spawn,zeditor
       bind=SUPER,b,spawn,firefox
@@ -273,10 +273,9 @@
       layerrule=animation_type_close:zoom,layer_name:rofi
 
       exec-once=~/.config/mango/autostart.sh
-      exec-once=noctalia-shell
     '';
     autostart_sh = ''
-      swaybg -i ~/wallpapers/10.png > /dev/null 2>&1 &
+      noctalia-shell
     '';
   };
 }

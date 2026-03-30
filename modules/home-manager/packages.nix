@@ -17,14 +17,8 @@
     vesktop
     element-desktop
 
-    # Desktop / Wayland utilities
-    waybar
-    swaybg
-    rofi
-
     # Games
     prismlauncher
-    mangohud
     lutris
     heroic
     parsec-bin

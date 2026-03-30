@@ -11,7 +11,7 @@
   boot.loader.grub.useOSProber = true;
 
   # Kernel
-  boot.kernelPackages = pkgs.linuxPackages_6_12;
+  boot.kernelPackages = pkgs.linuxPackages_6_18;
 
   # User account
   users.users.zafir = {
