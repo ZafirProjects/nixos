@@ -187,11 +187,20 @@
         enable = true;
         servers = {
           lua-ls.enable = true;
+          nixd.enable = true;
+          jsonls.enable = true;
+
           gopls.enable = true;
-          cssls.enable = true;
-          html.enable = true;
-          ts-ls.enable = true;
           omnisharp.enable = true;
+          pyright.enable = true;
+
+          ts-ls.enable = true;
+          html.enable = true;
+          cssls.enable = true;
+          tailwindcss.enable = true;
+          emmet-ls.enable = true;
+
+          terraform-ls.enable = true;
         };
       };
 

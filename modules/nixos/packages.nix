@@ -18,5 +18,7 @@
     fzf
     zoxide
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    prettierd
+    stylua
   ];
 }

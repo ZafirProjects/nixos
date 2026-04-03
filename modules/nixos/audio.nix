@@ -15,5 +15,14 @@
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
+
+    wireplumber.extraConfig = {
+      "bluetooth" = {
+        "monitor.bluez.properties" = {
+          # Disable LDAC - decoder initialization fails with LDACBT_ERR_FATAL
+          "bluez5.codecs" = [ "sbc" "sbc_xq" "aac" "aptx" "aptx_hd" ];
+        };
+      };
+    };
   };
 }

@@ -25,14 +25,13 @@
 
     # Audio Video
     audacity
-    obs-studio
     handbrake
     vlc
     pinta
 
     # Proton
     protonmail-desktop
-    protonvpn-gui
+    proton-vpn
     proton-pass
   ];
 }
